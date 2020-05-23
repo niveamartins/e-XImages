@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="images">
+        {% for photo in photos %}
+            <a href="{{ url_for('image', imageName=photo.fileName)}}" >
+                <img class="image" src="{{ url_for('static', filename=photo.filePath)}}">
+            </a>    
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+        <img src="{{ url_for('static', filename=imageName)}}" id="imageToCanvas" width="0" height="0">
+
+        <canvas id="myCanvas" width="1000" height="1000">
+        </canvas>
+        
+    <script>
+
+        window.onload = function() {
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            let img = document.getElementById("imageToCanvas");
+            let coordRect = []
+            ctx.drawImage(img, 0, 0, 1000, 1000);
+            
+            let create_Rect = function(coordRect, ctx) {
+                let x1 = Number(coordRect[0])
+                let x2 = Number(coordRect[2])
+                let y1 = Number(coordRect[1])
+                let y2 = Number(coordRect[3])
+
+                let widthRect = x2 - x1
+                let heightRect = y2 - y1
+
+                ctx.beginPath();
+                ctx.lineWidth = "1";
+                ctx.strokeStyle = "red";
+                ctx.rect(x1, y1, widthRect, heightRect);
+                ctx.stroke();
+
+                console.log(x1, y1, widthRect, heightRect)
+            }
+            function getCursorPosition(canvas, event) {
+                const canvasCoord = canvas.getBoundingClientRect()
+                let x = event.x - canvasCoord.x
+                let y = event.y - canvasCoord.y
+                
+                console.log("x: " + x + " y: " + y)
+                
+                coordRect.push(x)
+                coordRect.push(y)
+
+                console.log(coordRect)
+
+                if (coordRect.length === 4) {
+                    create_Rect(coordRect, ctx)
+                    coordRect = []
+                 }
+            }
+
+            canvas.addEventListener('click', function (e) {
+                getCursorPosition(canvas, e)
+            
+        });
+        };
+    </script>
+{% endblock %}
