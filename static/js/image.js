@@ -8,8 +8,17 @@ window.onload = function() {
     let img = document.getElementById("imageToCanvas");
     let coordRect = []
     ctx.drawImage(img, 0, 0, 1000, 1000);
+
+    function getCursorPosition(canvas, event) {
+        canvasCoord = canvas.getBoundingClientRect();
+        var x = (event.x - canvasCoord.x)/(canvasCoord.right - canvasCoord.left) * canvas.width
+        var y = (event.y - canvasCoord.y)/(canvasCoord.bottom - canvasCoord.top) * canvas.height
+
+        return {'x': x, 'y': y}
+    }
+
             
-    let create_Rect = function(coordRect, ctx) {
+    let createRect = function(coordRect, ctx) {
         var x1 = Number(coordRect[0])
         var x2 = Number(coordRect[2])
         var y1 = Number(coordRect[1])
@@ -24,34 +33,31 @@ window.onload = function() {
         ctx.strokeRect(x1, y1, widthRect.toFixed(1), heightRect.toFixed(1));
 
         strCoord = x1 + ',' + y1 + ',' + x2 + ',' + y2
-        CoordenadasFinais.push(strCoord)
+        if (widthRect && heightRect !== 0) {
+            CoordenadasFinais.push(strCoord)
+        }
+    
 
         console.log(x1.toFixed(1), y1.toFixed(1), widthRect.toFixed(1), heightRect.toFixed(1)) // Console.log para debugar
     }
-    
-    function getCursorPosition(canvas, event) {
-        var temp = document.getElementById('myCanvas');
-                
-    
-        canvasCoord = canvas.getBoundingClientRect();
-        var x = (event.x - canvasCoord.x)/(canvasCoord.right - canvasCoord.left) * canvas.width
-        var y = (event.y - canvasCoord.y)/(canvasCoord.bottom - canvasCoord.top) * canvas.height
-        console.log(canvas.offsetLeft)
-        console.log("x: " + x + " y: " + y)
 
-        coordRect.push(x)
-        coordRect.push(y)
+    function getCoordenates(canvas, event) {
+        coord = getCursorPosition(canvas, event)
+        console.log("x: " + coord.x + " y: " + coord.y)
+
+        coordRect.push(coord.x)
+        coordRect.push(coord.y)
 
         console.log(coordRect) // Console.log para debugar
 
         if (coordRect.length === 4) {
-            create_Rect(coordRect, ctx)
+            createRect(coordRect, ctx)
             coordRect = []
         }
     }
 
     canvas.addEventListener('click', function (e) {
-        getCursorPosition(canvas, e)
+        getCoordenates(canvas, e)
             
     });
 };
@@ -88,6 +94,9 @@ submitCoord = function() {
     
 }
 
+// Excluindo marcações atuais
+
 
 // Editando as marcacoes
+
 

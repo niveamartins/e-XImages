@@ -5,13 +5,15 @@
 {% endblock %}
 
 {% block body %}
-    <p id="imageName">{{ imageName }}</p>
+    <p id="imageName" width="0" height="0">{{ imageName }}</p>
     <img src="{{ url_for('static', filename=imageName)}}" id="imageToCanvas" width="0" height="0">
 
-    <canvas id="myCanvas" width="1000" height="1000">
-    </canvas>
+    <div class="canvas">
+        <canvas id="myCanvas" width="1000" height="1000">
+        </canvas>
+    </div>
     
     <button onclick=submitCoord()>
-        Submit
+        Enviar coordenadas
     </button>
 {% endblock %}

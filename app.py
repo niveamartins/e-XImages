@@ -1,8 +1,6 @@
 from flask import Flask, render_template, url_for, request
-from flask.json import jsonify
 import csv
-import json
-
+from static.py.imageProcessing import cropWithCSV
 
 app = Flask(__name__)
 
@@ -30,7 +28,9 @@ def index():
         'fileName':'oscar_selfie.jpg',
         'filePath': 'images/oscar_selfie.jpg'
     }
-]
+]   
+    cropWithCSV()
+
     return render_template('index.html', **locals())
 
 @app.route('/image/<imageName>')
