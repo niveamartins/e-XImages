@@ -1,66 +1,17 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/image.js') }}"></script>
 {% endblock %}
 
 {% block body %}
-        <img src="{{ url_for('static', filename=imageName)}}" id="imageToCanvas" width="0" height="0">
+    <p id="imageName">{{ imageName }}</p>
+    <img src="{{ url_for('static', filename=imageName)}}" id="imageToCanvas" width="0" height="0">
 
-        <canvas id="myCanvas" width="1000" height="1000">
-        </canvas>
-
-        
-    <script>
-
-        window.onload = function() {
-            let canvas = document.getElementById("myCanvas");
-            let ctx = canvas.getContext("2d");
-            let img = document.getElementById("imageToCanvas");
-            let coordRect = []
-            ctx.drawImage(img, 0, 0, 1000, 1000);
-            
-            let create_Rect = function(coordRect, ctx) {
-                var x1 = Number(coordRect[0])
-                var x2 = Number(coordRect[2])
-                var y1 = Number(coordRect[1])
-                var y2 = Number(coordRect[3])
-
-                var widthRect = x2 - x1;
-                var heightRect = y2 - y1;
-
-                ctx.beginPath()
-                ctx.lineWidth = "1";
-                ctx.strokeStyle = "red";
-                ctx.strokeRect(x1, y1, widthRect.toFixed(1), heightRect.toFixed(1));
-
-                console.log(x1.toFixed(1), y1.toFixed(1), widthRect.toFixed(1), heightRect.toFixed(1)) // Console.log para debugar
-            }
-            function getCursorPosition(canvas, event) {
-                var temp = document.getElementById('myCanvas');
-                
+    <canvas id="myCanvas" width="1000" height="1000">
+    </canvas>
     
-                canvasCoord = canvas.getBoundingClientRect();
-                var x = (event.x - canvasCoord.x)/(canvasCoord.right - canvasCoord.left) * canvas.width
-                var y = (event.y - canvasCoord.y)/(canvasCoord.bottom - canvasCoord.top) * canvas.height
-                console.log(canvas.offsetLeft)
-                console.log("x: " + x + " y: " + y)
-
-                coordRect.push(x)
-                coordRect.push(y)
-
-                console.log(coordRect) // Console.log para debugar
-
-                if (coordRect.length === 4) {
-                    create_Rect(coordRect, ctx)
-                    coordRect = []
-                 }
-            }
-
-            canvas.addEventListener('click', function (e) {
-                getCursorPosition(canvas, e)
-            
-        });
-        };
-    </script>
+    <button onclick=submitCoord()>
+        Submit
+    </button>
 {% endblock %}

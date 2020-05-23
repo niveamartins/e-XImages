@@ -1,8 +1,12 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
+from flask.json import jsonify
+import csv
+import json
+
 
 app = Flask(__name__)
 
-
+# Rotas do Front
 @app.route('/')
 def index(): 
     photos = [
@@ -35,6 +39,21 @@ def image(imageName):
     return render_template('image.html', **locals())
 
 
+# Rotas do Back-end
+@app.route('/api/createfile', methods=['POST'])
+def create_file():
+    data = request.data.decode()
+
+    dados = data.split(' # ,' or ' # ')
+
+    c = csv.writer(open("./static/Coordenadas.csv", "a"))
+
+    for item in dados:
+        item = item.split()
+        c.writerow([item[0]])
+        
+
+    return "qualquer merda"
 
 if __name__ == "__main__":
     app.run(debug=True)
