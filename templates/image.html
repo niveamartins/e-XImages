@@ -9,6 +9,7 @@
 
         <canvas id="myCanvas" width="1000" height="1000">
         </canvas>
+
         
     <script>
 
@@ -20,33 +21,35 @@
             ctx.drawImage(img, 0, 0, 1000, 1000);
             
             let create_Rect = function(coordRect, ctx) {
-                let x1 = Number(coordRect[0])
-                let x2 = Number(coordRect[2])
-                let y1 = Number(coordRect[1])
-                let y2 = Number(coordRect[3])
+                var x1 = Number(coordRect[0])
+                var x2 = Number(coordRect[2])
+                var y1 = Number(coordRect[1])
+                var y2 = Number(coordRect[3])
 
-                let widthRect = x2 - x1;
-                let heightRect = y2 - y1;
+                var widthRect = x2 - x1;
+                var heightRect = y2 - y1;
 
-                ctx.beginPath();
+                ctx.beginPath()
                 ctx.lineWidth = "1";
                 ctx.strokeStyle = "red";
-                ctx.rect(x1, y1, widthRect, heightRect);
-                ctx.stroke();
+                ctx.strokeRect(x1, y1, widthRect.toFixed(1), heightRect.toFixed(1));
 
-                console.log(x1, y1, widthRect, heightRect)
+                console.log(x1.toFixed(1), y1.toFixed(1), widthRect.toFixed(1), heightRect.toFixed(1)) // Console.log para debugar
             }
             function getCursorPosition(canvas, event) {
-                const canvasCoord = canvas.getBoundingClientRect()
-                let x = event.x - canvasCoord.x
-                let y = event.y - canvasCoord.y
+                var temp = document.getElementById('myCanvas');
                 
+    
+                canvasCoord = canvas.getBoundingClientRect();
+                var x = (event.x - canvasCoord.x)/(canvasCoord.right - canvasCoord.left) * canvas.width
+                var y = (event.y - canvasCoord.y)/(canvasCoord.bottom - canvasCoord.top) * canvas.height
+                console.log(canvas.offsetLeft)
                 console.log("x: " + x + " y: " + y)
-                
+
                 coordRect.push(x)
                 coordRect.push(y)
 
-                console.log(coordRect)
+                console.log(coordRect) // Console.log para debugar
 
                 if (coordRect.length === 4) {
                     create_Rect(coordRect, ctx)
