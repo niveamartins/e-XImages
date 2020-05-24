@@ -22,11 +22,6 @@ nav {
     font-size: 60%;
 }
 
-nav a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-
 button {
     background-color: darkorange;
     margin-top: 5px;
@@ -39,6 +34,8 @@ button {
 
 a {
     width: 20%;
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 .canvas {
@@ -51,11 +48,6 @@ a {
     font-size: 300%;
 }
 
-.images {
-    display: flex;
-    justify-content: space-around;
-}
-
 .croppedImages {
     width: 90%;
 }
@@ -66,7 +58,8 @@ a {
 }
 
 .image {
-    width: 100%;
+    width: 30%;
+    margin: 5px;
 }
 
 #myCanvas {

@@ -12,5 +12,14 @@
                 <img class="image" src="{{ url_for('static', filename=photo.filePath)}}">
             </a>    
         {% endfor %}
+
     </div>
+
+
+    <a href="/cropped" >
+        <button>
+            Visualizar Cortes
+        </button>
+    </a>
+    
 {% endblock %}
