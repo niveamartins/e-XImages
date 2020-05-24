@@ -27,15 +27,23 @@ nav a {
     color: whitesmoke;
 }
 
+button {
+    background-color: darkorange;
+    margin-top: 5px;
+    padding: 2% 7%;
+    border: none;
+    text-transform: uppercase;
+    font-size: medium;
+    color: white;
+}
+
+a {
+    width: 20%;
+}
+
 .canvas {
     padding-left: 5%;
     padding-right: 5%;
-}
-
-#imageName {
-    width: 0;
-    height: 0;
-    color: white;
 }
 
 .pageTitle {
@@ -48,8 +56,13 @@ nav a {
     justify-content: space-around;
 }
 
-a {
-    width: 20%;
+.croppedImages {
+    width: 90%;
+}
+
+.croppedImage {
+    width: 200px;
+    margin: 10px;
 }
 
 .image {
@@ -61,15 +74,13 @@ a {
     height: 100%;
 }
 
-button {
-    background-color: darkorange;
-    margin-top: 5px;
-    padding: 2% 7%;
-    border: none;
-    text-transform: uppercase;
-    font-size: medium;
+#imageName {
+    width: 0;
+    height: 0;
     color: white;
 }
+
+
 
 @media (max-width: 900px) { 
     body {

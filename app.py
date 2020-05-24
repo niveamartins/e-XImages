@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for, request
 import csv
 from static.py.imageProcessing import cropWithCSV
+import glob
 
 app = Flask(__name__)
 
@@ -29,7 +30,6 @@ def index():
         'filePath': 'images/oscar_selfie.jpg'
     }
 ]   
-    cropWithCSV()
 
     return render_template('index.html', **locals())
 
@@ -37,6 +37,14 @@ def index():
 def image(imageName):
     imageName = 'images/'+ imageName
     return render_template('image.html', **locals())
+
+@app.route('/cropped')
+def croppedImages():
+    croppedImages = []
+    croppedImages = cropWithCSV()
+
+    
+    return render_template('cropped.html', **locals())
 
 
 # Rotas do Back-end
@@ -53,7 +61,7 @@ def create_file():
         c.writerow([item[0]])
         
 
-    return "qualquer merda"
+    return "OK"
 
 if __name__ == "__main__":
     app.run(debug=True)

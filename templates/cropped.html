@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="croppedImages">
+        {% for photo in croppedImages %}
+
+            <img class="croppedImage" src="{{ url_for('static', filename=photo)}}">
+
+        {% endfor %}
+    </div>
+
+{% endblock %}
