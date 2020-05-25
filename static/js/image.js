@@ -87,10 +87,14 @@ submitCoord = function() {
         method: 'POST',
         body: DadosFinais
     }).then(function(response) {
-        console.log(response)
+        if (response.status == 200) {
+            alert("Coordenadas enviadas com sucesso!")
+        } else { 
+            alert("Não foi possível enviar as coordenadas. Por favor, tente novamente.")
+        }
     })
 
-    console.log(DadosFinais)
+    console.log(DadosFinais) //Console log para debugar
     
 }
 

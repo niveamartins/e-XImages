@@ -25,11 +25,12 @@ nav {
 button {
     background-color: darkorange;
     margin-top: 5px;
-    padding: 2% 7%;
+    padding: 4% 10%;
     border: none;
     text-transform: uppercase;
     font-size: medium;
     color: white;
+    display: block;
 }
 
 a {
@@ -90,5 +91,10 @@ a {
     .image {
         width: 300%;
 
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
     }
 }
