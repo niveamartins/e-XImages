@@ -6,7 +6,9 @@ Esse repositório contém uma aplicação web para que o usuário selecione múl
 Essa aplicação foi feita com Flask e WebComponents. Para configurar, devemos:
 
 ### Pelo docker:
-´sudo docker-compose up´
+
+` $ python --version`
+
 Dessa forma a aplicação vai rodar em http://127.0.0.1:8080/
 Caso você não tenha o docker disponível, siga os passos a seguir:
 
@@ -17,38 +19,37 @@ Caso você não tenha o docker disponível, siga os passos a seguir:
 O instalador encontra-se em https://www.python.org/downloads/windows
 
 Para verificar se ele encontra-se instalado 
-´ python --version ´
+` $ python --version` 
 
 * Linux 
-
-´ sudo apt-get install python3 ´
+` $ sudo apt-get install python3`
 
 Para verificar se ele encontra-se instalado
-´ python3 --version ´ 
+`$ python3 --version` 
 
 ### Instalar o Gerenciador de Pacotes do Python
 
 * Windows
-Já está instalado, para verificar ´ pip --version ´
+Já está instalado, para verificar `$ pip --version`
 
 * Linux
-´ sudo apt-get install python3-pip ´
+` $ sudo apt-get install python3-pip`
 
 Para verificar:
-´ pip3 --version ´
+`$ pip3 --version`
 
 ### Instalar o virtualenv
-´pip install virtualenv´
+` $ pip install virtualenv`
 
 ### Instalar o Flask
-´pip install flask´
+`$ pip install flask`
 
 ### Entrar no ambiente virtual
 Dentro da pasta do projeto:
-´source env/bin/activate´
+`$ source env/bin/activate`
 
 ### Rodar o Flask
-´ /env/bin/python3 app.py ´
+`$ /env/bin/python3 app.py`
 
 * Para que as requisições aconteçam, mude no arquivo image.js, dentro da função submitCoord, o link disponível dentro do fetch para http://0.0.0.0:5000/
 
