@@ -13,12 +13,14 @@ Caso você não tenha o docker disponível, siga os passos a seguir:
 ### Instalar o Python 3.7
 
 * Windows
+
 O instalador encontra-se em https://www.python.org/downloads/windows
 
 Para verificar se ele encontra-se instalado 
 ´ python --version ´
 
 * Linux 
+
 ´ sudo apt-get install python3 ´
 
 Para verificar se ele encontra-se instalado
