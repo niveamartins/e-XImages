@@ -18,37 +18,47 @@ Caso você não tenha o docker disponível, siga os passos a seguir:
 
 O instalador encontra-se em https://www.python.org/downloads/windows
 
-Para verificar se ele encontra-se instalado 
-` $ python --version` 
+
+Para verificar se ele encontra-se instalado ` $ python --version` 
 
 * Linux 
+
 ` $ sudo apt-get install python3`
 
 Para verificar se ele encontra-se instalado
+
 `$ python3 --version` 
 
 ### Instalar o Gerenciador de Pacotes do Python
 
 * Windows
+
 Já está instalado, para verificar `$ pip --version`
 
 * Linux
+
 ` $ sudo apt-get install python3-pip`
 
 Para verificar:
+
 `$ pip3 --version`
 
 ### Instalar o virtualenv
+
 ` $ pip install virtualenv`
 
 ### Instalar o Flask
+
 `$ pip install flask`
 
 ### Entrar no ambiente virtual
+
 Dentro da pasta do projeto:
+
 `$ source env/bin/activate`
 
 ### Rodar o Flask
+
 `$ /env/bin/python3 app.py`
 
 * Para que as requisições aconteçam, mude no arquivo image.js, dentro da função submitCoord, o link disponível dentro do fetch para http://0.0.0.0:5000/
