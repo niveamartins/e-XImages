@@ -5,6 +5,11 @@ Esse repositório contém uma aplicação web para que o usuário selecione múl
 ## Como configurar
 Essa aplicação foi feita com Flask e WebComponents. Para configurar, devemos:
 
+### Pelo docker:
+´sudo docker-compose up´
+Dessa forma a aplicação vai rodar em http://127.0.0.1:8080/
+Caso você não tenha o docker disponível, siga os passos a seguir:
+
 ### Instalar o Python 3.7
 
 * Windows
@@ -43,8 +48,9 @@ Dentro da pasta do projeto:
 ### Rodar o Flask
 ´ /env/bin/python3 app.py ´
 
+* Para que as requisições aconteçam, mude no arquivo image.js, dentro da função submitCoord, o link disponível dentro do fetch para http://0.0.0.0:5000/
 
-* Após isso, a aplicação estará rodando em http://127.0.0.1:5000/
+* Após isso, a aplicação estará rodando em http://0.0.0.0:5000/
 
 ## Como Usar e Funções
 

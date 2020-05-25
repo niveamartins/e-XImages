@@ -1,0 +1,7 @@
+version: '2'
+services:
+    app:
+        build: .
+        volumes: [.:/eXImages]
+        ports: ['8080:5000']
+        

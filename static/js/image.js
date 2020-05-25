@@ -83,7 +83,7 @@ submitCoord = function() {
 
 
     // Mandando arquivos para o Back-end
-    fetch('http://127.0.0.1:5000/api/createfile', {
+    fetch('http://0.0.0.0:8080/api/createfile', {
         method: 'POST',
         body: DadosFinais
     }).then(function(response) {
