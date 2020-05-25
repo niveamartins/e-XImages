@@ -75,3 +75,4 @@ Após selecionar uma imagem na página inicial, o usuário será designado para 
 
 ### Visualização de todos os cortes no banco
 Na página inicial e na página de cada imagem, o usuário encontra um botão para Visualizar Cortes, esse botão redireciona o usuário para a página de cortes ('/cropped') onde eles serão exibidos.
+
