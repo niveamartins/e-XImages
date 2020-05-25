@@ -4,7 +4,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
 
 }
 
@@ -14,12 +16,14 @@ nav {
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 3%;
-
     color: whitesmoke;
     text-decoration: none;
-    font-size: 60%;
+    font-size: 100%;
+}
+nav a {
+    display: inline;
 }
 
 button {
@@ -39,14 +43,19 @@ a {
     color: whitesmoke;
 }
 
+.instructions {
+    margin-top: 5%;
+}
+
 .canvas {
     padding-left: 5%;
     padding-right: 5%;
 }
 
-.pageTitle {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 300%;
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .croppedImages {

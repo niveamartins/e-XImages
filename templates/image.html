@@ -5,6 +5,11 @@
 {% endblock %}
 
 {% block body %}
+
+    <p class="instructions">
+        Para que você marque uma área, aperte no canto esquerdo superior da área e depois no canto direito inferior.
+    </p>
+
     <p id="imageName" width="0" height="0">{{ imageName }}</p>
     <img src="{{ url_for('static', filename=imageName)}}" id="imageToCanvas" width="0" height="0">
 
@@ -12,6 +17,10 @@
         <canvas id="myCanvas" width="1000" height="1000">
         </canvas>
     </div>
+    
+    <p class="instructions">
+        Após efetuar todas as marcações, selecione <strong>Enviar Coordenadas</strong>. Se quiser visualizar os cortes, pressione <strong>Visualizar Cortes</strong>.
+    </p>
     
     <div class="buttons"> 
         <a href="/cropped" >
