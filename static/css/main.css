@@ -10,7 +10,7 @@ body {
 
 }
 
-nav {
+nav-bar {
     background-color: darkorange;
     box-shadow: 5px 2px 3px #888888;
     display: flex;
@@ -22,9 +22,6 @@ nav {
     text-decoration: none;
     font-size: 100%;
 }
-nav a {
-    display: inline;
-}
 
 button {
     background-color: darkorange;
@@ -35,12 +32,6 @@ button {
     font-size: medium;
     color: white;
     display: block;
-}
-
-a {
-    width: 20%;
-    text-decoration: none;
-    color: whitesmoke;
 }
 
 .instructions {
