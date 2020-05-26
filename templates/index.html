@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+<script type="text/javascript" src="{{ url_for('static', filename='js/components/instructions.js') }}"></script>
 {% endblock %}
 
 {% block body %}
-    <p class="instructions">
-        Selecione uma imagem para começar a marcar:
-    </p>
+    <the-instructions text="Selecione uma imagem para começar a marcar:"></the-instructions>
 
     <div class="images">
         {% for photo in photos %}

@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block head %}
-    <script type="text/javascript" src="{{ url_for('static', filename='js/components/navbar.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/components/instructions.js') }}"></script>
 {% endblock %}
 
 {% block body %}
 
-    <p class="instructions">
-        Para que você marque uma área, aperte no canto esquerdo superior da área e depois no canto direito inferior.
-    </p>
+    <instructions text="Para que você marque uma área, aperte no canto esquerdo superior da área e depois no canto direito inferior.">
+    </instructions>
+
 
     <p id="imageName" width="0" height="0">{{ imageName }}</p>
     <img src="{{ url_for('static', filename=imageName)}}" id="imageToCanvas" width="0" height="0">
@@ -18,9 +18,8 @@
         </canvas>
     </div>
     
-    <p class="instructions">
-        Após efetuar todas as marcações, selecione <strong>Enviar Coordenadas</strong>. Se quiser visualizar os cortes, pressione <strong>Visualizar Cortes</strong>.
-    </p>
+    <the-instructions text="Após efetuar todas as marcações, selecione Enviar Coordenadas. Se quiser visualizar os cortes, pressione Visualizar Cortes.">
+    </the-instructions>
     
     <div class="buttons"> 
         <a href="/cropped" >
