@@ -26,11 +26,11 @@ class Image extends HTMLElement {
         }
 
         // Setting some style
-        //const style = document.createElement('style')
-        //style.textContent = 
+        const style = document.createElement('style')
+        style.textContent = "img { width: 30% }"
 
         // Appending style
-        //shadow.appendChild(style)
+        shadow.appendChild(style)
         
     }
     

@@ -23,9 +23,9 @@ nav-bar {
     font-size: 100%;
 }
 
-/* .instructions {
-    margin-top: 5%;
-} */
+new-image {
+    margin: 5px;
+}
 
 .canvas {
     padding-left: 5%;
@@ -40,16 +40,6 @@ nav-bar {
 
 .croppedImages {
     width: 90%;
-}
-
-.croppedImage {
-    width: 200px;
-    margin: 10px;
-}
-
-.image {
-    width: 30%;
-    margin: 5px;
 }
 
 #myCanvas {
@@ -77,7 +67,7 @@ nav-bar {
         
     }
 
-    .image {
+    new-image {
         width: 300%;
 
     }

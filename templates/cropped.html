@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+<script type="text/javascript" src="{{ url_for('static', filename='js/components/croppedImages.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -9,7 +9,7 @@
     <div class="croppedImages">
         {% for photo in croppedImages %}
 
-            <img class="croppedImage" src="{{ url_for('static', filename=photo)}}">
+            <cropped-img src="{{ url_for('static', filename=photo)}}"></cropped-img>
 
         {% endfor %}
     </div>
