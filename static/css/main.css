@@ -10,7 +10,7 @@ body {
 
 }
 
-nav {
+nav-bar {
     background-color: darkorange;
     box-shadow: 5px 2px 3px #888888;
     display: flex;
@@ -22,29 +22,9 @@ nav {
     text-decoration: none;
     font-size: 100%;
 }
-nav a {
-    display: inline;
-}
 
-button {
-    background-color: darkorange;
-    margin-top: 5px;
-    padding: 4% 10%;
-    border: none;
-    text-transform: uppercase;
-    font-size: medium;
-    color: white;
-    display: block;
-}
-
-a {
-    width: 20%;
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-.instructions {
-    margin-top: 5%;
+new-image {
+    margin: 5px;
 }
 
 .canvas {
@@ -60,16 +40,6 @@ a {
 
 .croppedImages {
     width: 90%;
-}
-
-.croppedImage {
-    width: 200px;
-    margin: 10px;
-}
-
-.image {
-    width: 30%;
-    margin: 5px;
 }
 
 #myCanvas {
@@ -97,7 +67,7 @@ a {
         
     }
 
-    .image {
+    new-image {
         width: 300%;
 
     }
