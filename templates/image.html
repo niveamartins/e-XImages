@@ -2,6 +2,8 @@
 
 {% block head %}
     <script type="text/javascript" src="{{ url_for('static', filename='js/components/instructions.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/components/button.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/image.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -22,14 +24,8 @@
     </the-instructions>
     
     <div class="buttons"> 
-        <a href="/cropped" >
-            <button>
-                Visualizar Cortes
-            </button>
 
-        <button onclick=submitCoord()>
-            Enviar coordenadas
-        </button>
-        </a>
+        <new-button href="/cropped" name="Visualizar Cortes"></new-button>
+        <new-button onclick=submitCoord() name="Enviar coordenadas"></new-button>
     </div>
 {% endblock %}

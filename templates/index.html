@@ -2,6 +2,8 @@
 
 {% block head %}
 <script type="text/javascript" src="{{ url_for('static', filename='js/components/instructions.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/components/button.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/components/images.js') }}"></script>
 {% endblock %}
 
 {% block body %}
@@ -9,18 +11,11 @@
 
     <div class="images">
         {% for photo in photos %}
-            <a href="{{ url_for('image', imageName=photo.fileName)}}" >
-                <img class="image" src="{{ url_for('static', filename=photo.filePath)}}">
-            </a>    
+            <new-image href="{{ url_for('image', imageName=photo.fileName)}}" src="{{ url_for('static', filename=photo.filePath)}}"></new-image>    
         {% endfor %}
 
     </div>
 
-
-    <a href="/cropped" >
-        <button>
-            Visualizar Cortes
-        </button>
-    </a>
+    <new-button href="/cropped" name="Visualizar Cortes"></new-button>
     
 {% endblock %}

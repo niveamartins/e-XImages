@@ -23,17 +23,6 @@ nav-bar {
     font-size: 100%;
 }
 
-button {
-    background-color: darkorange;
-    margin-top: 5px;
-    padding: 4% 10%;
-    border: none;
-    text-transform: uppercase;
-    font-size: medium;
-    color: white;
-    display: block;
-}
-
 /* .instructions {
     margin-top: 5%;
 } */
