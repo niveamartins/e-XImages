@@ -31,7 +31,7 @@ class Button extends HTMLElement {
 
         // Setting some style
         const style = document.createElement('style')
-        style.textContent = " button { background-color: darkorange; margin-top: 5px; padding: 4% 10%; border: none; text-transform: uppercase; font-size: medium; color: white; display: block;} a { width: 20%; text-decoration: none; color: whitesmoke;}"
+        style.textContent = " button { background-color: darkorange; margin-top: 5px; margin-left: 4px; padding: 4% 10%; border: none; text-transform: uppercase; font-size: medium; color: white; display: block;} a { width: 20%; text-decoration: none; color: whitesmoke;}"
         
         // Appending style
         shadow.appendChild(style)
